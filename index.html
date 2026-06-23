@@ -232,7 +232,7 @@
     .form-card {
       position: sticky;
       top: 24px;
-      padding: clamp(24px, 3vw, 32px);
+      padding: clamp(18px, 2.4vw, 24px);
       border: 1px solid rgba(182, 120, 109, 0.24);
       border-radius: var(--radius);
       background: rgba(255, 255, 255, 0.96);
@@ -240,8 +240,8 @@
     }
 
     .form-card h2 {
-      font-size: clamp(1.6rem, 2.6vw, 2.25rem);
-      line-height: 1.18;
+      font-size: clamp(1.34rem, 2.1vw, 1.8rem);
+      line-height: 1.16;
     }
 
     .form-card p {
@@ -312,10 +312,11 @@
     }
 
     .privacy-note {
-      margin: 2px 0 0;
+      margin: 8px auto 0;
       color: var(--muted);
-      font-size: 0.76rem;
-      line-height: 1.45;
+      font-size: 0.72rem;
+      line-height: 1.38;
+      text-align: center;
     }
 
     .privacy-note a {
@@ -589,34 +590,8 @@
         <aside class="form-card" id="formular" aria-labelledby="form-title">
           <h2 id="form-title">Sichere dir jetzt kostenlos deinen Platz.</h2>
           <!-- BREVO FORMULAR HIER SPÄTER EINSETZEN -->
-          <form action="https://d95fb451.sibforms.com/serve/MUIFACYPbPti1wtPOJJrrmYS0ue6d55Wm3jPCB5QJ1RP5tgqFwCoezOgfH5zQwmrOdRCyzio4pWlwLYGx7yBzkiexw0BWIO1loA_p5I074ZHLsDsqDJ83xCvBEf5ukWjAqvfkNwJj0uh65ENRdaqW-dX_UNvJ0SLyn8qcCdYIeKujw3WNR9Cp8No45PLglLFtE-QNm2xxvNHxtFKUA==" method="post" id="sib-form" data-type="subscription">
-            <label for="firstname">Vorname</label>
-            <input id="firstname" name="FULL_NAME" type="text" autocomplete="given-name" placeholder="Vorname" maxlength="200" required>
-
-            <label for="email">E-Mail</label>
-            <input id="email" name="EMAIL" type="email" autocomplete="email" placeholder="E-Mail" required>
-
-            <label for="sms">Handy-Nummer</label>
-            <div class="phone-row">
-              <select id="sms-country-code" name="SMS__COUNTRY_CODE" aria-label="Ländervorwahl" required>
-                <option value="+41" selected>+41 CH</option>
-                <option value="+49">+49 DE</option>
-                <option value="+43">+43 AT</option>
-                <option value="+33">+33 FR</option>
-                <option value="+39">+39 IT</option>
-                <option value="+423">+423 LI</option>
-              </select>
-              <input id="sms" name="SMS" type="tel" autocomplete="tel" placeholder="Handy-Nummer" required>
-            </div>
-
-            <div class="g-recaptcha-v3" data-sitekey="6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh" style="display: none"></div>
-
-            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <input type="hidden" name="locale" value="de">
-
-            <button class="button" type="submit">Jetzt kostenlos anmelden</button>
-            <p class="privacy-note">Mit deiner Anmeldung erklärst du dich einverstanden, dass deine Angaben über Brevo verarbeitet werden. Es gilt die <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Datenschutzerklärung von Brevo</a>.</p>
-          </form>
+          <iframe width="320" height="470" src="https://d95fb451.sibforms.com/v2/serve/MUIFACYPbPti1wtPOJJrrmYS0ue6d55Wm3jPCB5QJ1RP5tgqFwCoezOgfH5zQwmrOdRCyzio4pWlwLYGx7yBzkiexw0BWIO1loA_p5I074ZHLsDsqDJ83xCvBEf5ukWjAqvfkNwJj0uh65ENRdaqW-dX_UNvJ0SLyn8qcCdYIeKujw3WNR9Cp8No45PLglLFtE-QNm2xxvNHxtFKUA==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+          <p class="privacy-note">Mit deiner Anmeldung werden deine Angaben über Brevo verarbeitet. Es gilt die <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Datenschutzerklärung von Brevo</a>.</p>
           <p class="limited">Die Plätze sind begrenzt.</p>
         </aside>
       </div>
@@ -673,54 +648,7 @@
     <div class="container">Sonntag | Live Online | Kostenlos · <a href="https://zyraone.ch/impressum/" target="_blank" rel="noopener">Impressum</a></div>
   </footer>
 
-  <script src="https://www.google.com/recaptcha/api.js?render=6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh&hl=de" async defer></script>
   <script>
-    const recaptchaSiteKey = "6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh";
-    const brevoForm = document.getElementById("sib-form");
-
-    if (brevoForm) {
-      brevoForm.addEventListener("submit", (event) => {
-        if (brevoForm.dataset.recaptchaReady === "true") {
-          return;
-        }
-
-        event.preventDefault();
-        const submitButton = brevoForm.querySelector("button[type='submit']");
-        if (submitButton) {
-          submitButton.disabled = true;
-        }
-
-        if (!window.grecaptcha) {
-          if (submitButton) {
-            submitButton.disabled = false;
-          }
-          alert("reCAPTCHA konnte nicht geladen werden. Bitte versuche es erneut.");
-          return;
-        }
-
-        grecaptcha.ready(() => {
-          grecaptcha.execute(recaptchaSiteKey, { action: "submit" }).then((token) => {
-            let tokenField = brevoForm.querySelector("input[name='g-recaptcha-response']");
-            if (!tokenField) {
-              tokenField = document.createElement("input");
-              tokenField.type = "hidden";
-              tokenField.name = "g-recaptcha-response";
-              brevoForm.appendChild(tokenField);
-            }
-
-            tokenField.value = token;
-            brevoForm.dataset.recaptchaReady = "true";
-            HTMLFormElement.prototype.submit.call(brevoForm);
-          }).catch(() => {
-            if (submitButton) {
-              submitButton.disabled = false;
-            }
-            alert("reCAPTCHA konnte nicht bestätigt werden. Bitte versuche es erneut.");
-          });
-        });
-      });
-    }
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
