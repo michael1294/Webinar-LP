@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kostenloses Live-Webinar für Kosmetikerinnen</title>
   <meta name="description" content="Kostenloses Live-Webinar für Kosmetikerinnen: Wie du über Instagram regelmässig neue Kundinnen gewinnst.">
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
   <style>
     :root {
       --bg: #f8f4f0;
@@ -264,16 +263,6 @@
       font-weight: 750;
     }
 
-    .form-card label[for="FULL_NAME"],
-    .form-card label[for="EMAIL"] {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-    }
-
     input,
     select {
       width: 100%;
@@ -334,235 +323,6 @@
       font-weight: 750;
       text-decoration: underline;
       text-underline-offset: 2px;
-    }
-
-    .sib-form-message-panel {
-      display: none;
-      width: 100%;
-      margin: 0 0 14px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      font-size: 0.9rem;
-      line-height: 1.45;
-    }
-
-    .sib-form-message-panel__text {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-    }
-
-    .sib-notification__icon {
-      width: 18px;
-      height: 18px;
-      flex: 0 0 18px;
-      margin-top: 2px;
-    }
-
-    #error-message {
-      color: #661d1d;
-      background: #ffeded;
-      border-color: #ffb3b3;
-    }
-
-    #success-message {
-      color: #085229;
-      background: #e7faf0;
-      border-color: #a9ebc5;
-    }
-
-    .entry__error {
-      display: none;
-      margin-top: 7px;
-      padding: 8px 10px;
-      border: 1px solid #ffb3b3;
-      border-radius: 8px;
-      color: #661d1d;
-      background: #ffeded;
-      font-size: 0.82rem;
-      font-weight: 650;
-      line-height: 1.35;
-    }
-
-    .form-card .sib-form-block,
-    .form-card .form__entry,
-    .form-card .form__label-row,
-    .form-card .entry__field,
-    .form-card .sib-sms-input-wrapper {
-      width: 100% !important;
-      max-width: none !important;
-    }
-
-    .form-card .sib-form-block {
-      padding: 0 !important;
-    }
-
-    .form-card .form__label-row {
-      display: block !important;
-    }
-
-    .form-card #sib-form > div[style*="padding: 8px 0"] {
-      padding: 0 !important;
-    }
-
-    .form-card #sib-form .entry__field > input.input,
-    .form-card #sib-form .entry__field > select.input {
-      display: block !important;
-      width: 100% !important;
-      max-width: none !important;
-    }
-
-    .sib-sms-input {
-      display: grid;
-      grid-template-columns: minmax(118px, 0.38fr) minmax(0, 1fr);
-      gap: 10px;
-    }
-
-    .sib-sms-tooltip {
-      display: none;
-    }
-
-    .sib-sms-select__list {
-      display: none !important;
-      position: absolute !important;
-      max-height: 260px !important;
-      overflow-y: auto !important;
-      margin: 6px 0 0 !important;
-      padding: 6px !important;
-      border: 1px solid var(--line) !important;
-      border-radius: 10px !important;
-      background: #fffdfc !important;
-      box-shadow: var(--shadow) !important;
-      list-style: none !important;
-      z-index: 9999 !important;
-    }
-
-    .sib-sms-select__list.sib-is-open {
-      display: block !important;
-    }
-
-    .sib-sms-select__list li {
-      display: flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      padding: 9px 10px !important;
-      border-radius: 8px !important;
-      color: var(--text) !important;
-      cursor: pointer !important;
-    }
-
-    .sib-sms-select__list li:hover {
-      background: rgba(47, 159, 147, 0.08) !important;
-    }
-
-    .sib-sms-select .sib-flag,
-    .sib-sms-select__list .sib-flag {
-      display: inline-flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      flex: 0 0 auto !important;
-      width: 22px !important;
-      min-width: 22px !important;
-      height: 22px !important;
-      background: none !important;
-      border-radius: 0 !important;
-      font-size: 17px !important;
-      line-height: 1 !important;
-    }
-
-    .sib-sms-select__list .sib-flag {
-      margin-right: 3px;
-    }
-
-    .sib-sms-select {
-      display: grid !important;
-      grid-template-columns: 52px minmax(0, 1fr);
-      gap: 8px;
-      width: 100%;
-    }
-
-    .sib-sms-select__title,
-    .sib-sms-select__number-input {
-      min-height: 54px;
-      margin: 0 !important;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fffdfc;
-      overflow: hidden;
-    }
-
-    .sib-sms-select__title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      padding: 0;
-      color: var(--text);
-      cursor: pointer;
-    }
-
-    .sib-sms-select__title .sib-flag {
-      width: 22px !important;
-      height: 22px !important;
-      min-width: 22px !important;
-      background: none !important;
-    }
-
-    .sib-sms-select__title .sib-sms-select__label-text {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-    }
-
-    .sib-sms-select__list .sib-sms-select__label-text {
-      position: static !important;
-      width: auto !important;
-      height: auto !important;
-      overflow: visible !important;
-      clip: auto !important;
-      color: var(--text);
-      font-size: 0.9rem;
-      line-height: 1.3;
-      white-space: normal !important;
-    }
-
-    .sib-sms-select__number-input {
-      display: grid;
-      grid-template-columns: 54px minmax(0, 1fr);
-      align-items: center;
-      position: relative;
-    }
-
-    .sib-sms-select__calling-code,
-    .sib-sms-select__phone-number {
-      width: 100%;
-      min-width: 0;
-      min-height: 52px;
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-    }
-
-    .sib-sms-select__calling-code {
-      padding-right: 8px;
-      color: var(--muted);
-      border-right: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .sib-sms-select__phone-number {
-      padding-left: 12px;
-    }
-
-    .sib-sms-select__title:focus-within,
-    .sib-sms-select__number-input:focus-within {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 4px rgba(47, 159, 147, 0.12);
     }
 
     .button {
@@ -829,129 +589,32 @@
         <aside class="form-card" id="formular" aria-labelledby="form-title">
           <h2 id="form-title">Sichere dir jetzt kostenlos deinen Platz.</h2>
           <!-- BREVO FORMULAR HIER SPÄTER EINSETZEN -->
-          <div id="error-message" class="sib-form-message-panel">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
-                <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216C40 136.797 136.602 40 256 40m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"></path>
-              </svg>
-              <span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span>
+          <form action="https://d95fb451.sibforms.com/serve/MUIFACYPbPti1wtPOJJrrmYS0ue6d55Wm3jPCB5QJ1RP5tgqFwCoezOgfH5zQwmrOdRCyzio4pWlwLYGx7yBzkiexw0BWIO1loA_p5I074ZHLsDsqDJ83xCvBEf5ukWjAqvfkNwJj0uh65ENRdaqW-dX_UNvJ0SLyn8qcCdYIeKujw3WNR9Cp8No45PLglLFtE-QNm2xxvNHxtFKUA==" method="post" id="sib-form" data-type="subscription">
+            <label for="firstname">Vorname</label>
+            <input id="firstname" name="FULL_NAME" type="text" autocomplete="given-name" placeholder="Vorname" maxlength="200" required>
+
+            <label for="email">E-Mail</label>
+            <input id="email" name="EMAIL" type="email" autocomplete="email" placeholder="E-Mail" required>
+
+            <label for="sms">Handy-Nummer</label>
+            <div class="phone-row">
+              <select id="sms-country-code" name="SMS__COUNTRY_CODE" aria-label="Ländervorwahl" required>
+                <option value="+41" selected>+41 CH</option>
+                <option value="+49">+49 DE</option>
+                <option value="+43">+43 AT</option>
+                <option value="+33">+33 FR</option>
+                <option value="+39">+39 IT</option>
+                <option value="+423">+423 LI</option>
+              </select>
+              <input id="sms" name="SMS" type="tel" autocomplete="tel" placeholder="Handy-Nummer" required>
             </div>
-          </div>
-
-          <div id="success-message" class="sib-form-message-panel">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon" aria-hidden="true">
-                <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm141.63 189.039L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"></path>
-              </svg>
-              <span class="sib-form-message-panel__inner-text">Deine Anmeldung war erfolgreich.</span>
-            </div>
-          </div>
-
-          <form id="sib-form" method="POST" action="https://d95fb451.sibforms.com/serve/MUIFACYPbPti1wtPOJJrrmYS0ue6d55Wm3jPCB5QJ1RP5tgqFwCoezOgfH5zQwmrOdRCyzio4pWlwLYGx7yBzkiexw0BWIO1loA_p5I074ZHLsDsqDJ83xCvBEf5ukWjAqvfkNwJj0uh65ENRdaqW-dX_UNvJ0SLyn8qcCdYIeKujw3WNR9Cp8No45PLglLFtE-QNm2xxvNHxtFKUA==" data-type="subscription">
-            <div class="sib-input sib-form-block">
-              <div class="form__entry entry_block">
-                <div class="form__label-row">
-                  <label for="FULL_NAME">Vorname</label>
-                  <div class="entry__field">
-                    <input class="input" maxlength="200" type="text" id="FULL_NAME" name="FULL_NAME" autocomplete="given-name" placeholder="Vorname" data-required="true" required>
-                  </div>
-                </div>
-                <label class="entry__error entry__error--primary"></label>
-              </div>
-            </div>
-
-            <div class="sib-input sib-form-block">
-              <div class="form__entry entry_block">
-                <div class="form__label-row">
-                  <label for="EMAIL">E-Mail</label>
-                  <div class="entry__field">
-                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="email" value="" placeholder="E-Mail" data-required="true" required>
-                  </div>
-                </div>
-                <label class="entry__error entry__error--primary"></label>
-              </div>
-            </div>
-
-        <div style="padding: 8px 0;">
-
-
-
-          <div class="sib-sms-field sib-form-block">
-            <div class="form__entry entry_block">
-              <div class="form__label-row ">
-
-
-
-
-
-
-
-                <div class="sib-sms-input-wrapper" style="direction:ltr">
-                  <div class="sib-sms-input" data-placeholder="Handy-Nummer" data-required="true" data-country-code="CH" data-value="" data-attributename="SMS">
-                    <div class="entry__field">
-                      <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
-                        <option value="+41" selected>
-                          +41 CH
-                        </option>
-
-                        <option value="+49">
-                          +49 DE
-                        </option>
-
-                        <option value="+43">
-                          +43 AT
-                        </option>
-
-                        <option value="+33">
-                          +33 FR
-                        </option>
-
-                        <option value="+39">
-                          +39 IT
-                        </option>
-
-                        <option value="+423">
-                          +423 LI
-                        </option>
-                      </select>
-                    </div>
-                    <div class="entry__field" style="width: 100%">
-                      <input type="tel" type="text" class="input" id="SMS" name="SMS" autocomplete="off" placeholder="Handy-Nummer" data-required="true" required />
-                    </div>
-                  </div>
-                  <div class="sib-sms-tooltip">
-                    <div class="sib-sms-tooltip__box">
-                      Das SMS-Feld muss zwischen 6 und 19 Ziffern enthalten und die Ländervorwahl ohne +/0 (z. B. 49xxxxxxxxxx für Deutschland) enthalten.
-                    </div>
-                    <span class="sib-sms-tooltip__icon">?</span>
-                  </div>
-                </div>
-
-
-              </div>
-
-              <label class="entry__error entry__error--primary" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;">
-              </label>
-
-              <label class="entry__error entry__error--secondary" style="font-family:Helvetica, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; border-radius:3px;">
-              </label>
-
-
-
-            </div>
-          </div>
-
-
-
-
-        </div>
 
             <div class="g-recaptcha-v3" data-sitekey="6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh" style="display: none"></div>
 
-            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="locale" value="de">
 
-            <button class="button sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">Jetzt kostenlos anmelden</button>
+            <button class="button" type="submit">Jetzt kostenlos anmelden</button>
             <p class="privacy-note">Mit deiner Anmeldung erklärst du dich einverstanden, dass deine Angaben über Brevo verarbeitet werden. Es gilt die <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Datenschutzerklärung von Brevo</a>.</p>
           </form>
           <p class="limited">Die Plätze sind begrenzt.</p>
@@ -1010,34 +673,52 @@
     <div class="container">Sonntag | Live Online | Kostenlos · <a href="https://zyraone.ch/impressum/" target="_blank" rel="noopener">Impressum</a></div>
   </footer>
 
+  <script src="https://www.google.com/recaptcha/api.js?render=6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh&hl=de" async defer></script>
   <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = "Wähle bitte einen Ländervorwahl aus.";
-    window.LOCALE = "de";
-    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
-    window.REQUIRED_ERROR_MESSAGE = "Dieses Feld darf nicht leer sein. ";
-    window.GENERIC_INVALID_MESSAGE = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
-    window.INVALID_NUMBER = "Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
-    window.INVALID_DATE = "Bitte gib ein gültiges Datum ein";
-    window.REQUIRED_MULTISELECT_MESSAGE = "Wähle bitte mindestens eine Option aus";
-    window.translation = {
-      common: {
-        selectedList: "{quantity} Liste ausgewählt",
-        selectedLists: "{quantity} Listen ausgewählt",
-        selectedOption: "{quantity} ausgewählt",
-        selectedOptions: "{quantity} ausgewählt"
-      }
-    };
-    var AUTOHIDE = Boolean(0);
+    const recaptchaSiteKey = "6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh";
+    const brevoForm = document.getElementById("sib-form");
 
-    const successPanel = document.getElementById("success-message");
-    if (successPanel) {
-      const successObserver = new MutationObserver(() => {
-        const isVisible = getComputedStyle(successPanel).display !== "none";
-        if (isVisible) {
-          window.location.href = "/thankyou/";
+    if (brevoForm) {
+      brevoForm.addEventListener("submit", (event) => {
+        if (brevoForm.dataset.recaptchaReady === "true") {
+          return;
         }
+
+        event.preventDefault();
+        const submitButton = brevoForm.querySelector("button[type='submit']");
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+
+        if (!window.grecaptcha) {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+          alert("reCAPTCHA konnte nicht geladen werden. Bitte versuche es erneut.");
+          return;
+        }
+
+        grecaptcha.ready(() => {
+          grecaptcha.execute(recaptchaSiteKey, { action: "submit" }).then((token) => {
+            let tokenField = brevoForm.querySelector("input[name='g-recaptcha-response']");
+            if (!tokenField) {
+              tokenField = document.createElement("input");
+              tokenField.type = "hidden";
+              tokenField.name = "g-recaptcha-response";
+              brevoForm.appendChild(tokenField);
+            }
+
+            tokenField.value = token;
+            brevoForm.dataset.recaptchaReady = "true";
+            HTMLFormElement.prototype.submit.call(brevoForm);
+          }).catch(() => {
+            if (submitButton) {
+              submitButton.disabled = false;
+            }
+            alert("reCAPTCHA konnte nicht bestätigt werden. Bitte versuche es erneut.");
+          });
+        });
       });
-      successObserver.observe(successPanel, { attributes: true, attributeFilter: ["style", "class"] });
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -1080,98 +761,6 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
-
-    const allowedSmsCountries = ["CH", "DE", "AT", "FR", "IT", "LI"];
-    const smsCountryLabels = {
-      CH: "Schweiz",
-      DE: "Deutschland",
-      AT: "Österreich",
-      FR: "Frankreich",
-      IT: "Italien",
-      LI: "Liechtenstein"
-    };
-    const smsCountryFlags = {
-      CH: "🇨🇭",
-      DE: "🇩🇪",
-      AT: "🇦🇹",
-      FR: "🇫🇷",
-      IT: "🇮🇹",
-      LI: "🇱🇮"
-    };
-
-    function setBrevoSmsFlag(flag, countryCode) {
-      if (!flag || !smsCountryFlags[countryCode]) {
-        return;
-      }
-
-      flag.textContent = smsCountryFlags[countryCode];
-      flag.setAttribute("aria-hidden", "true");
-    }
-
-    function getCountryCodeFromFlag(flag) {
-      const match = flag ? flag.className.match(/sib-flag-([a-z]{2})/) : null;
-      return match ? match[1].toUpperCase() : "";
-    }
-
-    function filterBrevoSmsCountries() {
-      const list = document.querySelector(".sib-sms-select__list");
-      if (!list) {
-        return;
-      }
-
-      const allowed = new Set(allowedSmsCountries);
-      list.querySelectorAll("li").forEach((item) => {
-        if (!allowed.has(item.dataset.code)) {
-          item.remove();
-        }
-      });
-
-      const currentOrder = Array.from(list.querySelectorAll("li")).map((item) => item.dataset.code).join("|");
-
-      allowedSmsCountries.forEach((countryCode) => {
-        const item = list.querySelector(`li[data-code="${countryCode}"]`);
-        const label = item ? item.querySelector(".sib-sms-select__label-text") : null;
-        if (label) {
-          label.textContent = smsCountryLabels[countryCode];
-        }
-        setBrevoSmsFlag(item ? item.querySelector(".sib-flag") : null, countryCode);
-      });
-
-      const activeFlag = document.querySelector(".sib-sms-select__title .sib-flag");
-      setBrevoSmsFlag(activeFlag, getCountryCodeFromFlag(activeFlag) || "CH");
-
-      if (currentOrder === allowedSmsCountries.join("|")) {
-        return;
-      }
-
-      allowedSmsCountries.forEach((countryCode) => {
-        const item = list.querySelector(`li[data-code="${countryCode}"]`);
-        if (item) {
-          list.appendChild(item);
-        }
-      });
-    }
-
-    window.addEventListener("load", () => {
-      filterBrevoSmsCountries();
-      setTimeout(filterBrevoSmsCountries, 250);
-      setTimeout(filterBrevoSmsCountries, 1000);
-    });
-
-    const brevoForm = document.getElementById("sib-form");
-    if (brevoForm) {
-      new MutationObserver(filterBrevoSmsCountries).observe(brevoForm, {
-        attributes: true,
-        childList: true,
-        subtree: true
-      });
-      brevoForm.addEventListener("click", () => {
-        setTimeout(filterBrevoSmsCountries, 0);
-        setTimeout(filterBrevoSmsCountries, 150);
-      });
-    }
   </script>
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js?render=6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh&hl=de" async defer></script>
 </body>
 </html>
