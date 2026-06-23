@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kostenloses Live-Webinar für Kosmetikerinnen</title>
+  <meta name="description" content="Kostenloses Live-Webinar für Kosmetikerinnen: Wie du über Instagram regelmässig neue Kundinnen gewinnst.">
+  <style>
+    :root {
+      --bg: #f8f4f0;
+      --bg2: #fffdfb;
+      --surface: #ffffff;
+      --surface2: #f1e7e1;
+      --text: #171717;
+      --muted: #716763;
+      --accent: #b6786d;
+      --accent-dark: #8d5148;
+      --teal: #2f9f93;
+      --gold: #d69a39;
+      --accent-soft: #f0dbd5;
+      --line: #e8ded8;
+      --shadow: 0 22px 54px rgba(69, 45, 39, 0.13);
+      --radius: 14px;
+      --max: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      overflow: hidden;
+    }
+
+    .section {
+      padding: 76px 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .container {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 54px 24px 72px;
+      background:
+        radial-gradient(ellipse 76% 48% at 50% -8%, rgba(182, 120, 109, 0.16), transparent 68%),
+        linear-gradient(180deg, #fffdfb 0%, #f8f4f0 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.96fr) minmax(360px, 0.72fr);
+      gap: clamp(34px, 5vw, 64px);
+      align-items: start;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 24px;
+      padding: 7px 18px;
+      border: 1px solid rgba(182, 120, 109, 0.26);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--accent-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 6px rgba(47, 159, 147, 0.11);
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 660px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.55rem, 5vw, 4.55rem);
+      font-weight: 700;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.9rem, 3.4vw, 3.05rem);
+      font-weight: 700;
+    }
+
+    .subheadline {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.06rem, 1.8vw, 1.32rem);
+      line-height: 1.55;
+    }
+
+    .date-line {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 24px;
+      padding: 10px 18px;
+      border: 1px solid rgba(47, 159, 147, 0.24);
+      border-radius: 999px;
+      background: rgba(47, 159, 147, 0.08);
+      color: #236f67;
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    .countdown {
+      max-width: 620px;
+      margin-top: 28px;
+      padding: 14px;
+      border: 1px solid rgba(182, 120, 109, 0.2);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 36px rgba(69, 45, 39, 0.07);
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+    }
+
+    .time-box {
+      min-width: 0;
+      padding: 15px 8px;
+      border-radius: 10px;
+      background: #fffaf7;
+      text-align: center;
+      border: 1px solid var(--line);
+    }
+
+    .time-box strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.7rem, 3.2vw, 2.35rem);
+      line-height: 1;
+      color: var(--accent-dark);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .time-box span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.69rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .intro-copy {
+      max-width: 600px;
+      margin-top: 34px;
+      color: var(--text);
+      font-size: clamp(1.08rem, 1.6vw, 1.24rem);
+      font-weight: 750;
+      line-height: 1.42;
+    }
+
+    .intro-copy p {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 10px;
+      align-items: start;
+      margin: 0 0 11px;
+    }
+
+    .intro-copy p::before {
+      content: "•";
+      color: var(--teal);
+      font-size: 1.45rem;
+      line-height: 0.9;
+    }
+
+    .intro-copy p:last-child {
+      margin-top: 4px;
+      color: var(--accent-dark);
+      font-size: clamp(1.16rem, 1.8vw, 1.36rem);
+    }
+
+    .intro-copy p:last-child::before {
+      content: "!";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(214, 154, 57, 0.15);
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .form-card {
+      position: sticky;
+      top: 24px;
+      padding: clamp(24px, 3vw, 32px);
+      border: 1px solid rgba(182, 120, 109, 0.24);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+    }
+
+    .form-card h2 {
+      font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+      line-height: 1.18;
+    }
+
+    .form-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 750;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 54px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fffdfc;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(47, 159, 147, 0.12);
+    }
+
+    select {
+      appearance: none;
+      background:
+        linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+        linear-gradient(135deg, var(--muted) 50%, transparent 50%),
+        #fffdfc;
+      background-position:
+        calc(100% - 18px) 50%,
+        calc(100% - 12px) 50%,
+        0 0;
+      background-size:
+        6px 6px,
+        6px 6px,
+        100% 100%;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    .phone-row {
+      display: grid;
+      grid-template-columns: minmax(118px, 0.38fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .input--hidden {
+      display: none !important;
+    }
+
+    .captcha-wrap {
+      overflow: hidden;
+      margin: 2px 0 0;
+    }
+
+    .privacy-note {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 0.76rem;
+      line-height: 1.45;
+    }
+
+    .privacy-note a {
+      color: var(--accent-dark);
+      font-weight: 750;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 14px 20px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--teal);
+      color: #ffffff;
+      font: inherit;
+      font-weight: 850;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(47, 159, 147, 0.24);
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: #25877d;
+      box-shadow: 0 16px 32px rgba(47, 159, 147, 0.28);
+      transform: translateY(-2px);
+    }
+
+    .limited {
+      margin-top: 14px;
+      color: var(--gold);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .content-block {
+      max-width: 860px;
+    }
+
+    .content-block.center {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .lead {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.7vw, 1.28rem);
+    }
+
+    .truth {
+      background: var(--bg2);
+    }
+
+    .truth-panel {
+      padding: clamp(30px, 5vw, 54px);
+      border: 1px solid rgba(47, 159, 147, 0.2);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(47, 159, 147, 0.08), #ffffff 72%);
+      box-shadow: 0 18px 46px rgba(69, 45, 39, 0.06);
+    }
+
+    .truth-panel .statement {
+      margin: 20px 0 0;
+      font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+      line-height: 1.32;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .list-section {
+      background: var(--bg);
+    }
+
+    .list-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .list-card {
+      padding: clamp(24px, 3vw, 32px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 12px 38px rgba(69, 45, 39, 0.06);
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--text);
+      padding: 15px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fffaf7;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: var(--teal);
+      font-weight: 900;
+    }
+
+    .final-cta {
+      background: linear-gradient(135deg, #fffdfb 0%, rgba(47, 159, 147, 0.08) 100%);
+      text-align: center;
+    }
+
+    .final-cta .button {
+      margin-top: 26px;
+    }
+
+    footer {
+      padding: 28px 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      background: var(--bg2);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .rev {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 560ms ease, transform 560ms ease;
+    }
+
+    .rev.on {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding-top: 34px;
+      }
+
+      .hero-grid,
+      .list-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 28px;
+      }
+
+      .hero-copy {
+        display: contents;
+      }
+
+      .kicker,
+      h1,
+      .subheadline,
+      .date-line,
+      .countdown {
+        order: 1;
+      }
+
+      .form-card {
+        position: static;
+        order: 2;
+      }
+
+      .intro-copy {
+        order: 3;
+      }
+
+      .section {
+        padding: 60px 20px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .date-line {
+        width: 100%;
+        justify-content: center;
+        border-radius: var(--radius);
+        text-align: center;
+      }
+
+      .countdown {
+        padding: 12px;
+      }
+
+      .countdown-grid {
+        gap: 8px;
+      }
+
+      .time-box {
+        padding: 12px 4px;
+      }
+
+      .time-box span {
+        font-size: 0.66rem;
+      }
+
+      .form-card,
+      .list-card,
+      .truth-panel {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid rev">
+        <div class="hero-copy">
+          <p class="kicker">KOSTENLOSES LIVE-WEBINAR FÜR KOSMETIKERINNEN</p>
+          <h1 id="hero-title">Wie du über Instagram regelmässig neue Kundinnen gewinnst – ohne täglich posten zu müssen</h1>
+          <p class="date-line">Sonntag | Live Online | Kostenlos</p>
+
+          <div class="countdown" aria-label="Countdown bis zum Webinar">
+            <div class="countdown-grid">
+              <div class="time-box">
+                <strong id="days">00</strong>
+                <span>Tage</span>
+              </div>
+              <div class="time-box">
+                <strong id="hours">00</strong>
+                <span>Stunden</span>
+              </div>
+              <div class="time-box">
+                <strong id="minutes">00</strong>
+                <span>Minuten</span>
+              </div>
+              <div class="time-box">
+                <strong id="seconds">00</strong>
+                <span>Sekunden</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="intro-copy">
+            <p>Du postest.</p>
+            <p>Du gibst dir Mühe.</p>
+            <p>Du investierst Zeit in Instagram.</p>
+            <p>Und trotzdem bleiben Anfragen und Buchungen hinter deinen Erwartungen zurück.</p>
+          </div>
+        </div>
+
+        <aside class="form-card" id="formular" aria-labelledby="form-title">
+          <h2 id="form-title">Sichere dir jetzt kostenlos deinen Platz.</h2>
+          <!-- BREVO FORMULAR HIER SPÄTER EINSETZEN -->
+          <form action="https://d95fb451.sibforms.com/serve/MUIFACYPbPti1wtPOJJrrmYS0ue6d55Wm3jPCB5QJ1RP5tgqFwCoezOgfH5zQwmrOdRCyzio4pWlwLYGx7yBzkiexw0BWIO1loA_p5I074ZHLsDsqDJ83xCvBEf5ukWjAqvfkNwJj0uh65ENRdaqW-dX_UNvJ0SLyn8qcCdYIeKujw3WNR9Cp8No45PLglLFtE-QNm2xxvNHxtFKUA==" method="post" id="sib-form" data-type="subscription">
+            <label for="firstname">Vorname</label>
+            <input id="firstname" name="FULL_NAME" type="text" autocomplete="given-name" placeholder="Vorname" maxlength="200" required>
+
+            <label for="email">E-Mail</label>
+            <input id="email" name="EMAIL" type="email" autocomplete="email" placeholder="E-Mail" required>
+
+            <label for="sms">Handy-Nummer</label>
+            <div class="phone-row">
+              <select id="sms-country-code" name="SMS__COUNTRY_CODE" aria-label="Ländervorwahl" required>
+                <option value="+41" selected>+41 CH</option>
+                <option value="+49">+49 DE</option>
+                <option value="+43">+43 AT</option>
+                <option value="+33">+33 FR</option>
+                <option value="+39">+39 IT</option>
+                <option value="+423">+423 LI</option>
+              </select>
+              <input id="sms" name="SMS" type="tel" autocomplete="tel" placeholder="Handy-Nummer" required>
+            </div>
+
+            <div class="captcha-wrap">
+              <div class="g-recaptcha" data-sitekey="6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh"></div>
+            </div>
+
+            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="locale" value="de">
+
+            <button class="button" type="submit">Jetzt kostenlos anmelden</button>
+            <p class="privacy-note">Mit deiner Anmeldung erklärst du dich einverstanden, dass deine Angaben über Brevo verarbeitet werden. Es gilt die <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="nofollow noopener">Datenschutzerklärung von Brevo</a>.</p>
+          </form>
+          <p class="limited">Die Plätze sind begrenzt.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section truth">
+      <div class="container content-block">
+        <div class="truth-panel rev">
+          <h2>Die Wahrheit:</h2>
+          <p class="statement">Die meisten Kosmetikerinnen haben kein Reichweitenproblem.<br>Sie haben kein System.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section list-section">
+      <div class="container">
+        <div class="list-grid">
+          <article class="list-card rev">
+            <h2>In diesem kostenlosen Live-Webinar zeige ich dir:</h2>
+            <ul class="check-list">
+              <li>Die 4 Bausteine erfolgreicher Kosmetikstudios auf Instagram</li>
+              <li>Wie du Reels nutzt, um neue Menschen auf dich aufmerksam zu machen</li>
+              <li>Wie Storys Vertrauen aufbauen und Kundinnen zum Handeln bewegen</li>
+              <li>Wie Lives deinen Expertenstatus stärken</li>
+              <li>Wie du aus Followern echte Kundinnen machst</li>
+              <li>Wie du Content deutlich schneller erstellen kannst</li>
+              <li>Die grössten Fehler, die Kosmetikerinnen täglich Zeit und Umsatz kosten</li>
+            </ul>
+          </article>
+
+          <article class="list-card rev">
+            <h2>Dieses Webinar ist für dich, wenn du:</h2>
+            <ul class="check-list">
+              <li>Mehr Kundinnen gewinnen möchtest</li>
+              <li>Mehr Sichtbarkeit möchtest</li>
+              <li>Weniger Zeit für Social Media aufwenden möchtest</li>
+              <li>Dein Studio professionell aufbauen möchtest</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <div class="container content-block center rev">
+        <h2>Sichere dir jetzt kostenlos deinen Platz.</h2>
+        <a class="button" href="#formular">Jetzt kostenlos anmelden</a>
+        <p class="lead">Die Plätze sind begrenzt.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Sonntag | Live Online | Kostenlos · <a href="https://zyraone.ch/impressum/" target="_blank" rel="noopener">Impressum</a></div>
+  </footer>
+
+  <script src="https://www.google.com/recaptcha/api.js?hl=de" async defer></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("on");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".rev").forEach((element) => observer.observe(element));
+
+    const targetDate = new Date("2026-06-28T20:00:00+02:00").getTime();
+    const units = {
+      days: document.getElementById("days"),
+      hours: document.getElementById("hours"),
+      minutes: document.getElementById("minutes"),
+      seconds: document.getElementById("seconds")
+    };
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = Math.max(0, targetDate - now);
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      units.days.textContent = pad(days);
+      units.hours.textContent = pad(hours);
+      units.minutes.textContent = pad(minutes);
+      units.seconds.textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
