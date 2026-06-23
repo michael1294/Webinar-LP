@@ -311,11 +311,6 @@
       display: none !important;
     }
 
-    .captcha-wrap {
-      overflow: hidden;
-      margin: 2px 0 0;
-    }
-
     .privacy-note {
       margin: 2px 0 0;
       color: var(--muted);
@@ -614,9 +609,7 @@
               <input id="sms" name="SMS" type="tel" autocomplete="tel" placeholder="Handy-Nummer" required>
             </div>
 
-            <div class="captcha-wrap">
-              <div class="g-recaptcha" data-sitekey="6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh"></div>
-            </div>
+            <div class="g-recaptcha-v3" data-sitekey="6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh" style="display: none"></div>
 
             <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="locale" value="de">
@@ -680,8 +673,54 @@
     <div class="container">Sonntag | Live Online | Kostenlos · <a href="https://zyraone.ch/impressum/" target="_blank" rel="noopener">Impressum</a></div>
   </footer>
 
-  <script src="https://www.google.com/recaptcha/api.js?hl=de" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh&hl=de" async defer></script>
   <script>
+    const recaptchaSiteKey = "6LffheMsAAAAANNpUTAOndwzW8kxtS6a2spTw2zh";
+    const brevoForm = document.getElementById("sib-form");
+
+    if (brevoForm) {
+      brevoForm.addEventListener("submit", (event) => {
+        if (brevoForm.dataset.recaptchaReady === "true") {
+          return;
+        }
+
+        event.preventDefault();
+        const submitButton = brevoForm.querySelector("button[type='submit']");
+        if (submitButton) {
+          submitButton.disabled = true;
+        }
+
+        if (!window.grecaptcha) {
+          if (submitButton) {
+            submitButton.disabled = false;
+          }
+          alert("reCAPTCHA konnte nicht geladen werden. Bitte versuche es erneut.");
+          return;
+        }
+
+        grecaptcha.ready(() => {
+          grecaptcha.execute(recaptchaSiteKey, { action: "submit" }).then((token) => {
+            let tokenField = brevoForm.querySelector("input[name='g-recaptcha-response']");
+            if (!tokenField) {
+              tokenField = document.createElement("input");
+              tokenField.type = "hidden";
+              tokenField.name = "g-recaptcha-response";
+              brevoForm.appendChild(tokenField);
+            }
+
+            tokenField.value = token;
+            brevoForm.dataset.recaptchaReady = "true";
+            HTMLFormElement.prototype.submit.call(brevoForm);
+          }).catch(() => {
+            if (submitButton) {
+              submitButton.disabled = false;
+            }
+            alert("reCAPTCHA konnte nicht bestätigt werden. Bitte versuche es erneut.");
+          });
+        });
+      });
+    }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
